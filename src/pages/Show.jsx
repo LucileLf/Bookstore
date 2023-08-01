@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import books from '../library'
 import "./show.scss";
+import {FaHeart} from 'react-icons/fa';
 
 
 function Show() {
@@ -28,7 +29,8 @@ function Show() {
         <p><span className="titre">Résumé:</span> {book.summary} </p>
         <p><span className="titre">Prix:</span> {book.price}</p>
         <button>Ajouter au panier</button>
-        <button>Ajouter aux favoris</button>
+        <button><FaHeart id="heart-icon" />Ajouter aux favoris</button>
+
       </div>
 
     </div>

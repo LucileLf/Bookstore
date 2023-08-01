@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import Navbar from './components/navbar'
 import Categories from './components/categories'
@@ -8,16 +8,23 @@ import Index from './pages/Index'
 
 
 function App() {
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleSearchChange = (value) =>  {
+    setSearchInput(value);
+  }
+
+
   return (
     <div className="App">
         <header className="App-header">
             {/* <Header /> */}
-            <Navbar />
+            <Navbar onChange={handleSearchChange}/>
             <Categories />
         </header>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index />}></Route>
+            <Route path="/" element={<Index searchInput={searchInput} />}></Route>
             <Route path="/book/:id" element={<Show />}></Route>
           </Routes>
         </BrowserRouter>

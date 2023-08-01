@@ -1,14 +1,20 @@
-import books from '../library'
+import React, { useState } from 'react';
+//import Search from "../components/search";
 import Book from '../components/book';
 import {Link} from "react-router-dom"
+import books from '../library'
 
+function Index({ searchInput }) {
 
-function Index() {
+  const filteredBooks = books.filter((book) =>
+    book.title.toLowerCase().includes(searchInput.toLowerCase())
+  );
+
   return(
     <div className="main">
       <div className="books">
         {/* add condition (if no query, dispaly all book, else...) */}
-        {books.map((book, index) => (
+        {filteredBooks.map((book, index) => (
           <Link key={index} to={`/book/${index}`}>
             <Book key={index}
             book={book}
