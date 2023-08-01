@@ -1,14 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import "./book.scss";
 
 
 function Book (props) {
-  return <div class="book">
-    <div class="book-cover">
-      <h2>Title: {props.title} </h2>
+
+  const { title, author, cover, summary, price, genre } = props.book;
+  const style = {
+    backgroundImage: `url('${cover}')`
+  };
+
+  return <div className="book">
+    <div className="book-cover" style={style}>
     </div>
-    <div class="book-title"></div>
+    <div className="book-info">
+      <span className="book-title">{title}</span>, {author}
+      <div className="book-price">
+        {price}
+      </div>
+    </div>
+
   </div>
 }
+
 
 export default Book;

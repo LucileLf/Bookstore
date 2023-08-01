@@ -1,0 +1,25 @@
+.show-book{
+  margin: 2vh 8vw;
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  height: 90vh;
+
+  .show-book-cover{
+    width:40%;
+    //background-position: center;
+    img{
+      width: 40%;
+    }
+    }
+
+  .show-book-info{
+    width: 60%;
+    .titre{
+      font-weight: bold;
+    }
+    .button{
+
+    }
+  }
+}
